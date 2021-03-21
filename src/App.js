@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import { Component } from 'react';
+import { Switch } from 'react-router-dom';
 import './App.css';
+import LandingPage from './components/LandingPage/LandingPage';
+import Header from './components/Header/Header'
+import Search from './components/Search/Search';
+import Favorites from './components/Favorites/Favorites';
+import LoginPage from './components/Login/LoginPage';
+import CreateAccountPage from './components/CreateAccount/CreateAccountPage';
+import PrivateRoute from './components/Utils/PrivateRoute';
+import PublicRoute from './components/Utils/PublicRoute';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <Header />
+        </div>
+        <div className="mainComponents">
+          <Switch>
+
+            <PublicRoute
+              exact path="/" component={LandingPage}
+            />
+
+            <PublicRoute
+              exact path="/login" component={LoginPage}
+            />
+
+            <PublicRoute
+              exact path="/create-account" component={CreateAccountPage}
+            />
+
+            <PrivateRoute
+              exact path="/search" component={Search}
+            />
+
+            <PrivateRoute
+              exact path="/favorites" component={Favorites}
+            />
+
+          </Switch>
+
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
