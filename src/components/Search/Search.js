@@ -16,14 +16,18 @@ export default class Search extends React.Component {
     };
 
     handleChange = event => {
-
+        event.preventDefault();
+        //"d270212a1e834015b6c14390454993c9"
         const apiKey = config.API_KEY;
+        const apiEndpoint = config.API_ENDPOINT
+        console.log(apiKey)
+        console.log(apiEndpoint)
 
         this.setState({
             [event.target.name]: event.target.value
         })
 
-        let autocompleteUrl = `https://api.spoonacular.com/food/ingredients/autocomplete?${apiKey}&query=${this.state.ingredientItem}&number=5`
+        let autocompleteUrl = `https://api.spoonacular.com/food/ingredients/autocomplete?apiKey=${apiKey}&query=${this.state.ingredientItem}&number=5`
 
         fetch(autocompleteUrl)
             .then(res => res.json())
@@ -50,7 +54,7 @@ export default class Search extends React.Component {
 
         const apiKey = config.API_KEY;
 
-        let recipeSearchUrl = `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${this.state.selectIngredients}&number=5`;
+        let recipeSearchUrl = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${this.state.selectIngredients}&number=5`;
 
         fetch(recipeSearchUrl)
             .then(res => res.json())
@@ -70,7 +74,7 @@ export default class Search extends React.Component {
         const recipeId = event.currentTarget.id;
         const apiKey = config.API_KEY;
 
-        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?${apiKey}`;
+        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
         console.log(recipeId)
 

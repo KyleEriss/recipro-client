@@ -41,7 +41,7 @@ export default class Favorites extends React.Component {
         const recipeId = event.currentTarget.id;
         const apiKey = config.API_KEY;
 
-        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?${apiKey}`;
+        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
         console.log(recipeId)
 

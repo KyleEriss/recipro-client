@@ -27,7 +27,7 @@ export default class Header extends React.Component {
         return (
 
             <div className="App-header">
-                <div className="title" data-text="Reconnaissound">
+                <div className="title" data-text="Recipro">
                     <NavLinks.ReciproHeaderLink />
                 </div>
 
