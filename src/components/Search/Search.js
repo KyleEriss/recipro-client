@@ -17,11 +17,8 @@ export default class Search extends React.Component {
 
     handleChange = event => {
         event.preventDefault();
-        //"d270212a1e834015b6c14390454993c9"
         const apiKey = config.API_KEY;
         const apiEndpoint = config.API_ENDPOINT
-        console.log(apiKey)
-        console.log(apiEndpoint)
 
         this.setState({
             [event.target.name]: event.target.value
