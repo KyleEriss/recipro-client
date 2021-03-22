@@ -39,8 +39,9 @@ export default class Favorites extends React.Component {
     handleRecipeLink = (event) => {
 
         const recipeId = event.currentTarget.id;
+        const apiKey = config.API_KEY;
 
-        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=d270212a1e834015b6c14390454993c9`;
+        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?${apiKey}`;
 
         console.log(recipeId)
 
@@ -97,8 +98,3 @@ export default class Favorites extends React.Component {
 
     }
 }
-
-
-
-
-{/* <Button onClick={() => this.handleRemove(recipe.id)}>Delete from Playlist</Button> */ }

@@ -32,21 +32,13 @@ export default class App extends Component {
               exact path="/create-account" component={CreateAccountPage}
             />
 
-            <PublicRoute
-              exact path="/search" component={Search}
-            />
-
-            <PublicRoute
-              exact path="/favorites" component={Favorites}
-            />
-
-            {/* <PrivateRoute
+            <PrivateRoute
               exact path="/search" component={Search}
             />
 
             <PrivateRoute
               exact path="/favorites" component={Favorites}
-            /> */}
+            />
 
           </Switch>
 

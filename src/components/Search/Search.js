@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Input } from '../Utils/Utils';
 import AuthApiService from '../../API-Service';
+import config from '../../config';
 import './Search.css';
 
 export default class Search extends React.Component {
@@ -16,11 +17,13 @@ export default class Search extends React.Component {
 
     handleChange = event => {
 
+        const apiKey = config.API_KEY;
+
         this.setState({
             [event.target.name]: event.target.value
         })
 
-        let autocompleteUrl = `https://api.spoonacular.com/food/ingredients/autocomplete?apiKey=d270212a1e834015b6c14390454993c9&query=${this.state.ingredientItem}&number=5`
+        let autocompleteUrl = `https://api.spoonacular.com/food/ingredients/autocomplete?${apiKey}&query=${this.state.ingredientItem}&number=5`
 
         fetch(autocompleteUrl)
             .then(res => res.json())
@@ -45,7 +48,9 @@ export default class Search extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        let recipeSearchUrl = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=d270212a1e834015b6c14390454993c9&ingredients=${this.state.selectIngredients}&number=5`;
+        const apiKey = config.API_KEY;
+
+        let recipeSearchUrl = `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${this.state.selectIngredients}&number=5`;
 
         fetch(recipeSearchUrl)
             .then(res => res.json())
@@ -63,8 +68,9 @@ export default class Search extends React.Component {
     handleRecipeLink = (event) => {
 
         const recipeId = event.currentTarget.id;
+        const apiKey = config.API_KEY;
 
-        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=d270212a1e834015b6c14390454993c9`;
+        let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?${apiKey}`;
 
         console.log(recipeId)
 
