@@ -73,8 +73,6 @@ export default class Search extends React.Component {
 
         let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
-        console.log(recipeId)
-
         fetch(recipeInfo)
             .then(res => res.json())
             .then((data) => {
@@ -82,16 +80,11 @@ export default class Search extends React.Component {
                     this.openRecipeLinkWindow()
                 })
             })
-
-        console.log(this.state.recipeUrl)
-
     }
 
     removeIngredient = (name) => {
 
         let newSelectedIngredients = this.state.selectIngredients.filter(ingredient => ingredient !== name);
-
-        console.log(newSelectedIngredients)
 
         this.setState({
             selectIngredients: newSelectedIngredients
@@ -103,8 +96,6 @@ export default class Search extends React.Component {
     addToFavorites = (event) => {
 
         const idNumber = event.currentTarget.dataset.id;
-
-        console.log(idNumber)
 
         let recipeIdsMapped = this.state.recipes.map(recipe => {
             return recipe.id

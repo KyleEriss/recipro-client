@@ -25,7 +25,6 @@ export default class Favorites extends React.Component {
                 this.setState({
                     recipes: data, loading: false
                 })
-                console.log(this.state.recipes)
             })
             .catch(error => {
                 console.log({ error })
@@ -43,8 +42,6 @@ export default class Favorites extends React.Component {
 
         let recipeInfo = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
-        console.log(recipeId)
-
         fetch(recipeInfo)
             .then(res => res.json())
             .then((data) => {
@@ -52,16 +49,11 @@ export default class Favorites extends React.Component {
                     this.openRecipeLinkWindow()
                 })
             })
-
-        console.log(this.state.recipeUrl)
-
     }
 
     handleRemove = (id) => {
 
         const recipeId = id;
-
-        console.log(recipeId)
 
         AuthApiService.deleteRecipe(recipeId);
 
