@@ -18,11 +18,11 @@ Landing page:
 
 ![LandingPage](images/LandingPage.jpg)
 
-Explore music page:
+Search recipes page:
 
-![Search](images/Search.jpg)
+![Search](images/SearchPage.jpg)
 
-Playlist page:
+Favorite recipes page:
 
 ![Favorites](images/Favorites.jpg)
 
