@@ -179,12 +179,3 @@ export default class Search extends React.Component {
         );
     }
 }
-
-
-
-{/* <div className="recipeSearchButton">
-<Button type="submit">search recipes</Button>
-</div> */}
-
-
-{/* <a onClick={this.handleRecipeLink}href={this.state.recipeUrl} data-id={idx}> */ }

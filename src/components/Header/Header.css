@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Quicksand:wght@300&display=swap'); */
-
 @font-face {
     font-family: 'Clementine';
     src: url('../../fonts/clementine.ttf') format('truetype');
@@ -80,15 +78,6 @@ title:hover {
 .itemSearch:hover {
     text-decoration: underline;
 }
-    /* opacity: 0;
-    animation: itemExploreAnimation 4s forwards;
-    animation-delay: 10s;
-}
-
-@keyframes itemExploreAnimation {
-    from {opacity: 0;}
-    to {opacity: 1;}
-} */
 
 .itemFavorites {
     margin-right: 20px;
@@ -97,15 +86,6 @@ title:hover {
 .itemFavorites:hover {
     text-decoration: underline;
 }
-    /* opacity: 0;
-    animation: itemPlaylistAnimation 4s forwards;
-    animation-delay: 14s;
-}
-
-@keyframes itemPlaylistAnimation {
-    from {opacity: 0;}
-    to {opacity: 1;}
-} */
 
 .itemLogin {
     margin-right: 20px;
@@ -114,21 +94,3 @@ title:hover {
 .itemLogin:hover {
     text-decoration: underline;
 }
-    /* opacity: 0;
-    animation: itemLoginAnimation 4s forwards;
-    animation-delay: 18s;
-}
-
-@keyframes itemLoginAnimation {
-    from {opacity: 0;}
-    to {opacity: 1;}
-} */
-
-
-/* @media all and (min-width: 700px) {
-
-    @keyframes titleAnimation {
-        from {transform: translate(-50%, -50%);}
-        to {transform: translate(-50%, -400%);}
-    }
-} */

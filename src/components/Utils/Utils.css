@@ -26,24 +26,7 @@
   
   .Textarea {
     resize: vertical;
-  }
-  
-  /* .Button {
-    background-color: black;
-    border: none;
-    color: white;
-    text-shadow: 0 0 20px rgb(255, 0, 149);
-    padding: 16px 32px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-weight: 900;
-    letter-spacing: 1px;
-    font-family: 'Quicksand', sans-serif;
-  } */
+}
 
   @font-face {
     font-family: 'Clementine';
@@ -81,7 +64,6 @@
 }
 
   .Button {
-    /* background-color: black; */
     background: none;
     border: solid;
     border-style: double;
@@ -95,7 +77,6 @@
     font-size: 1.2em;
     margin: 4px 2px;
     cursor: pointer;
-    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     letter-spacing: 1px;
     font-weight: 100;
     font-family: 'Chalkboard', sans-serif;

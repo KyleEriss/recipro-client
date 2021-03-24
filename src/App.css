@@ -1,15 +1,3 @@
-/* .body {
-  background-image: url("images/chalkboard.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 370px 100%;
-  text-align: center;
-  color: black;
-  font-family: 'Passion One', cursive;
-  font-size: 20px;
-  text-shadow: 1px 1px 0px rgba(252, 136, 4, 0.993);
-} */
-
 @font-face {
   font-family: 'Clementine';
   src: url('fonts/clementine.ttf') format('truetype');
