@@ -1,20 +1,62 @@
+@font-face {
+    font-family: 'Clementine';
+    src: url('../../fonts/clementine.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chalkboard';
+    src: url('../../fonts/chalkboard.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chalk Outline';
+    src: url('../../fonts/chalk-outline.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'White Chalk';
+    src: url('../../fonts/white-chalk.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kg-second-chances';
+    src: url('../../fonts/kg-second-chances.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cf-blackboard';
+    src: url('../../fonts/cf-blackboard.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kg-sketch';
+    src: url('../../fonts/kg-sketch.ttf') format('truetype');
+}
+
 .allElements {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin-top: 70px;
 }
 
-.ingredientOptions {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+::placeholder {
+    text-align: center;
+    font-family: 'kg-second-chances', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.ingredientInput{
+    justify-content: center;
+    width: 90%;
+    margin-left: 5px;
 }
 
 .ingredientInput, .Input ul {
     text-align: left;
-    width: 80%;
-    margin-left: 10px;
     padding: 0;
 } 
 
@@ -33,9 +75,26 @@
     text-decoration: underline;
 }
 
+.autoCompleteSuggestions {
+    font-size: 1em;
+}
+
+.searchRecipeButton {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 1em;
+}
+
+.ingredientOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .selectedIngredients ul {
+    font-size: 1em;
     list-style-type: none;
-    text-align: left;
+    text-align: center;
     margin: 0;
     padding: 0;
 } 
@@ -46,18 +105,17 @@
 
 .selectedIngredients li {
     padding: 10px 5px;
-    cursor: pointer;
 }
 
-.selectedIngredients li:hover {
+/* .selectedIngredients li:hover {
     text-decoration: underline;
-}
+} */
 
 .recipeTitle ul {
+    letter-spacing: 1px;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    border-top: 1px solid grey;
 } 
 
 .recipeTitle ul::before {
@@ -74,7 +132,17 @@
 }
 
 .Note__delete{
-    margin-left: 10px;
+    background: none;
+    border: solid;
+    border-style: double;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius:15px 255px;
+    color: white;
+    margin-left: 40px;
+    font-family: 'Chalkboard', sans-serif;
+    font-size: 1em;
 }
 
 .Note__delete:hover {
@@ -84,17 +152,16 @@
     font-weight: bold;
 }
 
-.ingredientButton {
-    align-items: flex-start;
-    width: 30%;
-    font-size: 0.7em;
-    padding: 0;
-    margin-top: 5px;
-    margin-right: 10px;
+.saveFavoritesButton {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    font-size: 1em;
 }
 
-button {
-    background-color: black;
-    color: white;
-    border-radius: 10px;
+.saveFavoritesButton:hover {
+    cursor: pointer;
+}
+
+img {
+    border-radius: 20px;
 }

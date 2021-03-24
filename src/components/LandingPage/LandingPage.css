@@ -1,17 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Quicksand:wght@300&display=swap');
-
-.landingPageClass {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 900;
-    margin-right: 30px;
-    margin-left: 30px;
-    font-size: 1.5em;
-}
-
-/* .welcomeLanding {
+.welcomeLanding {
     opacity: 0;
-    animation: welcomeAnimationText 4s;
-    animation-delay: 6s;
+    animation: welcomeAnimationText 3s;
 }
 
 @keyframes welcomeAnimationText {
@@ -22,8 +11,8 @@
 
 .searchLanding {
     opacity: 0;
-    animation: searchAnimationText 4s;
-    animation-delay: 10s;
+    animation: searchAnimationText 3s;
+    animation-delay: 3s;
 }
 
 @keyframes searchAnimationText {
@@ -33,11 +22,11 @@
 
 .favoritesLanding {
     opacity: 0;
-    animation: favoritesAnimationText 4s;
-    animation-delay: 14s;
+    animation: favoritesAnimationText 3s;
+    animation-delay: 6s;
 }
 
 @keyframes favoritesAnimationText {
     from {opacity: 0;}
     to {opacity: 1;}
-} */
+}

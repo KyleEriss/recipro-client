@@ -1,0 +1,13 @@
+.username {
+    margin-top: 10px;
+}
+
+.password {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+::placeholder {
+    text-align: left;
+    font-weight: 100;
+}

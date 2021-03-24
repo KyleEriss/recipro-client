@@ -20,7 +20,8 @@
   
   .Input::placeholder,
   .Textarea::placeholder {
-    color: #ccc;
+    color: black;
+    font-size: 0.4em;
   }
   
   .Textarea {
@@ -44,20 +45,66 @@
     font-family: 'Quicksand', sans-serif;
   } */
 
+  @font-face {
+    font-family: 'Clementine';
+    src: url('../../fonts/clementine.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chalkboard';
+    src: url('../../fonts/chalkboard.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chalk Outline';
+    src: url('../../fonts/chalk-outline.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'White Chalk';
+    src: url('../../fonts/white-chalk.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kg-second-chances';
+    src: url('../../fonts/kg-second-chances.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cf-blackboard';
+    src: url('../../fonts/cf-blackboard.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kg-sketch';
+    src: url('../../fonts/kg-sketch.ttf') format('truetype');
+}
+
   .Button {
-    background-color: black;
-    border: none;
+    /* background-color: black; */
+    background: none;
+    border: solid;
+    border-style: double;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 100px 15px;
+    border-bottom-left-radius:15px 100px;
     color: white;
-    padding: 16px 32px;
+    padding: 8px 16px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-weight: 900;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     letter-spacing: 1px;
+    font-weight: 100;
+    font-family: 'Chalkboard', sans-serif;
   }
+
+  .Button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
   .Required {
     color: #CA1551;

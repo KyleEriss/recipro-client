@@ -1,10 +1,29 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  background-image: url("images/blackboard.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+body {
+  margin:0;
+	padding:0;
+	height:100%;
+	overflow: scroll;
+	background-color: #333;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1;
+	background: url(./images/bg.png) repeat;
 }
 
 code {

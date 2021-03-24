@@ -2,13 +2,13 @@
     margin-top: 20px;
 }
 
-/* .loginLanding {
+.loginLanding {
     opacity: 0;
-    animation: loginLandingText 3s forwards;
-    animation-delay: 18s;
+    animation: loginLandingText 2s forwards;
+    animation-delay: 9s;
 }
 
 @keyframes loginLandingText {
     from {opacity: 0;}
     to {opacity: 1;}
-} */
+}

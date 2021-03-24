@@ -18,7 +18,9 @@ export default class LoginPage extends React.Component {
     render() {
         return (
             <div className='LoginPage'>
-                <h2>Login</h2>
+                <h2 className="loginText"> 
+                    Login
+                </h2>
                 <LoginForm
                     onLoginSuccess={this.handleLoginSuccess}
                 />

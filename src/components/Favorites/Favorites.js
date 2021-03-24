@@ -85,10 +85,12 @@ export default class Favorites extends React.Component {
                         {this.state.recipes.map((recipe) =>
                             <li key={recipe.id}>
                                 <img src={recipe.recipeimage} />
-                                <h3 onClick={this.handleRecipeLink} id={recipe.recipeid}>
+                                <div onClick={this.handleRecipeLink} id={recipe.recipeid}>
                                     {recipe.recipetitle}
-                                </h3>
-                                <Button onClick={() => this.handleRemove(recipe.id)}>Delete from Playlist</Button>
+                                </div>
+                                <div className="deleteButton">
+                                    <Button onClick={() => this.handleRemove(recipe.id)}>Delete</Button>
+                                </div>
                             </li>
                         )}
                     </ul>

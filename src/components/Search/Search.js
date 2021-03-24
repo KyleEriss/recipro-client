@@ -123,63 +123,63 @@ export default class Search extends React.Component {
         const recipeTitle = recipeTitlesMapped[idNumber];
 
         AuthApiService.postRecipe(recipeId, recipeImage, recipeTitle);
-        
+
         const newRecipeList = this.state.recipes.filter((recipe) => recipe.id !== recipeId);
 
-        this.setState ({
+        this.setState({
             recipes: newRecipeList
         })
-        
+
     }
 
     render() {
         return (
             <div className="allElements">
-                <div className="ingredientOptions">
-                    <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="ingredientOptions">
+
                         <div className="ingredientInput">
                             <Input
                                 name="ingredientItem"
-                                placeholder="add ingredient"
+                                placeholder="Type ingredients here"
                                 value={this.state.ingredientItem}
                                 required
                                 autoComplete="off"
                                 onChange={this.handleChange}
                                 id="ingredientOptions"
                             />
-                            <ul>
+                            <ul className="autoCompleteSuggestions">
                                 {this.state.ingredientList.map((item) => <li onClick={() => this.addSelectIngredients(item)}>{item}</li>)}
                             </ul>
                         </div>
-                    </form>
-                    <div className="ingredientButton">
-                        <button onClick={this.addToList}>add ingredient</button>
                     </div>
-                </div>
 
-
-                <div className="selectedIngredients">
-                    <ul>
-                        {this.state.selectIngredients.map((ingredient) =>
-                            <li key={ingredient}>
-                                {ingredient}
-                                <button className="Note__delete" type="button" onClick={() => this.removeIngredient(ingredient)}>remove</button>
-                            </li>
-                        )}
-                    </ul>
-                </div>
-
-                <Button type="submit" onClick={this.handleSubmit}>search recipes</Button>
+                    <div className="selectedIngredients">
+                        <ul>
+                            {this.state.selectIngredients.map((ingredient) =>
+                                <li key={ingredient}>
+                                    {ingredient}
+                                    <button className="Note__delete" type="button" onClick={() => this.removeIngredient(ingredient)}>remove</button>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
+                    <div className="searchRecipeButton">
+                    <Button type="submit" onClick={this.handleSubmit}>search recipes</Button>
+                    </div>
+                </form>
 
                 <div className="recipeTitle">
                     <ul>
                         {this.state.recipes.map((recipe, idx) =>
                             <li key={idx}>
                                 <img src={recipe.image} />
-                                <h3 onClick={this.handleRecipeLink} id={recipe.id}>
+                                <div onClick={this.handleRecipeLink} id={recipe.id}>
                                     {recipe.title}
-                                </h3>
-                                <button type="button" onClick={this.addToFavorites} data-id={idx}>Save this recipe</button>
+                                </div>
+                                <div className="saveFavoritesButton">
+                                    <Button onClick={this.addToFavorites} data-id={idx}>Save this recipe</Button>
+                                </div>
                             </li>
                         )}
                     </ul>

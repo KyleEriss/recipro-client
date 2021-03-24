@@ -18,6 +18,7 @@ export default class App extends Component {
           <Header />
         </div>
         <div className="mainComponents">
+          
           <Switch>
 
             <PublicRoute

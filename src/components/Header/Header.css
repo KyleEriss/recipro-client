@@ -1,19 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Quicksand:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Quicksand:wght@300&display=swap'); */
+
+@font-face {
+    font-family: 'Clementine';
+    src: url('../../fonts/clementine.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chalkboard';
+    src: url('../../fonts/chalkboard.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chalk Outline';
+    src: url('../../fonts/chalk-outline.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'White Chalk';
+    src: url('../../fonts/white-chalk.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kg-second-chances';
+    src: url('../../fonts/kg-second-chances.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cf-blackboard';
+    src: url('../../fonts/cf-blackboard.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kg-sketch';
+    src: url('../../fonts/kg-sketch.ttf') format('truetype');
+}
+
+.borderClass {
+    border-bottom:solid 3px white;
+    border-bottom-right-radius: 225px 5px;
+    border-bottom-left-radius: 225px 5px;
+    width: 90%;
+}
 
 .App-header {
     display: flex;
     flex-direction: column;
     min-height: 5vh;
-    font-size: calc(10px + 2vmin);
-    background: black;
+    font-size: calc(15px + 2vmin);
 }
 
 .title {
     font-size: 3.2em;
     color: #fff;
-    font-family: 'Caveat', cursive;
+    margin-top: 20px;
 }
 
+title:hover {
+    text-decoration: underline;
+}
 
 .itemDouble {
     display: flex;
@@ -21,14 +65,20 @@
     justify-content: space-between;
     list-style: none;
     margin-right: 20px;
-    margin-bottom: 10px;
-    font-weight: 900;
-    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 100;
+    font-family: 'Chalkboard', sans-serif;
     font-size: 1.3em;
+    border-style: none;
+    
 }
 
 .itemSearch {
     margin-right: 20px;
+}
+
+.itemSearch:hover {
+    text-decoration: underline;
 }
     /* opacity: 0;
     animation: itemExploreAnimation 4s forwards;
@@ -43,6 +93,10 @@
 .itemFavorites {
     margin-right: 20px;
 }
+
+.itemFavorites:hover {
+    text-decoration: underline;
+}
     /* opacity: 0;
     animation: itemPlaylistAnimation 4s forwards;
     animation-delay: 14s;
@@ -55,6 +109,10 @@
 
 .itemLogin {
     margin-right: 20px;
+}
+
+.itemLogin:hover {
+    text-decoration: underline;
 }
     /* opacity: 0;
     animation: itemLoginAnimation 4s forwards;

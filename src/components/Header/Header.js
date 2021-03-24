@@ -25,26 +25,27 @@ export default class Header extends React.Component {
 
     render() {
         return (
-
-            <div className="App-header">
-                <div className="title" data-text="Recipro">
-                    <NavLinks.ReciproHeaderLink />
+            <div className="borderClass">
+                <div className="App-header">
+                    <div className="title" data-text="Recipro">
+                        <NavLinks.ReciproHeaderLink />
+                    </div>
+                    <ul className="itemDouble">
+                        <li className="itemSearch">
+                            <NavLinks.SearchLink />
+                        </li>
+                        <li className="itemFavorites">
+                            <NavLinks.FavoritesLink />
+                        </li>
+                        <li className="itemLogin">
+                            {TokenService.hasAuthToken()
+                                ? <NavLinks.LogoutLink logout={this.handleLogoutClick} />
+                                : <NavLinks.LoginLink />}
+                        </li>
+                    </ul>
                 </div>
-
-                <ul className="itemDouble">
-                    <li className="itemSearch">
-                        <NavLinks.SearchLink />
-                    </li>
-                    <li className="itemFavorites">
-                        <NavLinks.FavoritesLink />
-                    </li>
-                    <li className="itemLogin">
-                        {TokenService.hasAuthToken()
-                            ? <NavLinks.LogoutLink logout={this.handleLogoutClick} />
-                            : <NavLinks.LoginLink />}
-                    </li>
-                </ul>
             </div>
+
 
 
         )
