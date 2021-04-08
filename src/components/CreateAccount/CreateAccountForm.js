@@ -58,6 +58,7 @@ export default class CreateAccountForm extends React.Component {
                     </label>
                     <Input
                         name='password'
+                        placeholder='capletter/number/symbol required'
                         type='password'
                         required
                         id='RegistrationForm__password'>
