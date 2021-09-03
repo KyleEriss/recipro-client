@@ -30,3 +30,14 @@
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+.startSearchLanding {
+    opacity: 0;
+    animation: searchFeature 3s forwards;
+    animation-delay: 9s;
+}
+
+@keyframes searchFeature {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

@@ -3,9 +3,10 @@
 }
 
 .loginLanding {
+    margin-top: 20px;
     opacity: 0;
-    animation: loginLandingText 2s forwards;
-    animation-delay: 9s;
+    animation: loginLandingText 3s forwards;
+    animation-delay: 0.5s;
 }
 
 @keyframes loginLandingText {

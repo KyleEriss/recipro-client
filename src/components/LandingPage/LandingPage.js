@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LandingForm from './LandingForm';
+import Search from '../Search/Search';
 import './LandingPage.css'
 
 export default class LandingPage extends Component {
@@ -18,7 +18,10 @@ export default class LandingPage extends Component {
         <div className="favoritesLanding">
           Save favorite recipes
         </div>
-        <LandingForm />
+        <div className="startSearchLanding">
+          Start your search
+        <Search />
+        </div>
       </div>
 
     )

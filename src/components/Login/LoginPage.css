@@ -1,3 +1,8 @@
 .loginText {
-    letter-spacing: 20px;
+    letter-spacing: 3px;
+    margin: 0 0 10px 0;
+}
+
+.needAccountButton {
+    margin-top: 20px;
 }

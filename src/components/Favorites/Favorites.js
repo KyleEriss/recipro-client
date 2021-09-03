@@ -2,33 +2,21 @@ import React from 'react';
 import AuthApiService from '../../API-Service';
 import { Button } from '../Utils/Utils';
 import config from '../../config';
-import TokenService from '../../token-service';
 import './Favorites.css';
 
 export default class Favorites extends React.Component {
 
     state = {
         recipes: [],
-        loading: true
+        recipeItem: '',
+        loading: true,
+        suggestions: []
     }
 
     componentDidMount() {
-        fetch(`${config.API_ENDPOINT}/favorites`, {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-            }
+        AuthApiService.getRecipes().then((res) => {
+            this.setState({ recipes: res, loading: false })
         })
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({
-                    recipes: data, loading: false
-                })
-            })
-            .catch(error => {
-                console.log({ error })
-            })
     }
 
     openRecipeLinkWindow = () => {
@@ -66,17 +54,15 @@ export default class Favorites extends React.Component {
 
 
     render() {
-
         return (
             <div className="recipeTitle">
-
                 {this.state.loading || !this.state.recipes ? (
                     <div></div>
                 ) : (
                     <ul>
                         {this.state.recipes.map((recipe) =>
                             <li key={recipe.id}>
-                                <img src={recipe.recipeimage} />
+                                <img src={recipe.recipeimage} alt='../../../images/Favorites.jpg' />
                                 <div onClick={this.handleRecipeLink} id={recipe.recipeid}>
                                     {recipe.recipetitle}
                                 </div>

@@ -1,17 +1,27 @@
 import React from 'react';
 import { Button, Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../API-Service';
+import TokenService from '../../token-service';
+import './CreateAccountForm.css';
 
 export default class CreateAccountForm extends React.Component {
     static defaultProps = {
         onRegistrationSuccess: () => { }
     }
 
-    state = { error: null }
+    state = { 
+        error: null,
+        loggedIn: false
+     }
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { username, password } = ev.target
+        this.setState({error: ''})
+        const { username, password, passwordConfirm } = ev.target
+
+        if (password.value !== passwordConfirm.value) {
+            return this.setState({ error: 'Passwords do not match' });
+        }
 
         this.setState({ error: null })
         AuthApiService.postUser({
@@ -21,7 +31,11 @@ export default class CreateAccountForm extends React.Component {
             .then(user => {
                 username.value = ''
                 password.value = ''
-                this.props.onRegistrationSuccess()
+                TokenService.saveAuthToken(user.authToken)
+                this.setState({loggedIn: true})
+                setTimeout(() => {
+                    this.props.onRegistrationSuccess()
+                  }, 2000);
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -36,7 +50,14 @@ export default class CreateAccountForm extends React.Component {
                 onSubmit={this.handleSubmit}
             >
                 <div role='alert'>
-                    {error && <p className='red'>{error}</p>}
+                    {error && <p className='errorMessage'>{error}</p>}
+                </div>
+                <div>
+                    {this.state.loggedIn ? (
+                        <div className='successMessage'>Success! Redirecting...</div>
+                    ) : (
+                        <div></div>
+                    )}
                 </div>
 
                 <div className='username'>
@@ -46,6 +67,7 @@ export default class CreateAccountForm extends React.Component {
 
                     <Input
                         name='username'
+                        placeholder='enter username'
                         type='text'
                         required
                         id='RegistrationForm__username'>
@@ -62,6 +84,17 @@ export default class CreateAccountForm extends React.Component {
                         type='password'
                         required
                         id='RegistrationForm__password'>
+                    </Input>
+
+                    <label htmlFor='RegistrationForm__passwordConfirm'>
+                        Password <Required />
+                    </label>
+                    <Input
+                        name='passwordConfirm'
+                        placeholder='confirm password'
+                        type='password'
+                        required
+                        id='RegistrationForm__passwordConfirm'>
                     </Input>
                 </div>
 

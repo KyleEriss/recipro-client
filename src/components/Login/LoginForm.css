@@ -11,3 +11,11 @@
     text-align: left;
     font-weight: 100;
 }
+
+.errorMessage {
+    color: red;
+}
+
+.successMessage {
+    color: rgb(28, 212, 21);
+}

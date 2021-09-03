@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CreateAccountForm from './CreateAccountForm';
+import './CreateAccountPage.css';
 
 export default class CreateAccountPage extends Component {
   static defaultProps = {
@@ -10,13 +11,14 @@ export default class CreateAccountPage extends Component {
 
   handleRegistrationSuccess = user => {
     const { history } = this.props
-    history.push('/login')
+    history.push('/search')
+    window.location.reload(false);
   }
 
   render() {
     return (
       <div>
-        <h2>Create Account</h2>
+        <h2 className='createAccountText'>Create Account</h2>
         <CreateAccountForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />

@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Input } from '../Utils/Utils';
 import AuthApiService from '../../API-Service';
 import config from '../../config';
+import TokenService from '../../token-service';
 import './Search.css';
 
 export default class Search extends React.Component {
@@ -12,13 +14,19 @@ export default class Search extends React.Component {
         ingredientList: [],
         recipes: [],
         recipeUrl: "",
-        loading: true
+        loading: true,
+        loggedIn: null
     };
+
+    componentDidMount() {
+        this.setState({
+            loggedIn: TokenService.hasAuthToken()
+        })
+    }
 
     handleChange = event => {
         event.preventDefault();
         const apiKey = config.API_KEY;
-        const apiEndpoint = config.API_ENDPOINT
 
         this.setState({
             [event.target.name]: event.target.value
@@ -120,7 +128,6 @@ export default class Search extends React.Component {
         this.setState({
             recipes: newRecipeList
         })
-
     }
 
     render() {
@@ -156,7 +163,7 @@ export default class Search extends React.Component {
                         </ul>
                     </div>
                     <div className="searchRecipeButton">
-                    <Button type="submit" onClick={this.handleSubmit}>search recipes</Button>
+                        <Button type="submit" onClick={this.handleSubmit}>search recipes</Button>
                     </div>
                 </form>
 
@@ -164,12 +171,19 @@ export default class Search extends React.Component {
                     <ul>
                         {this.state.recipes.map((recipe, idx) =>
                             <li key={idx}>
-                                <img src={recipe.image} />
+                                <img src={recipe.image} alt='../../../images/Favorites.jpg'/>
                                 <div onClick={this.handleRecipeLink} id={recipe.id}>
                                     {recipe.title}
                                 </div>
                                 <div className="saveFavoritesButton">
-                                    <Button onClick={this.addToFavorites} data-id={idx}>Save this recipe</Button>
+                                    {this.state.loggedIn ? (
+                                        <Button onClick={this.addToFavorites} data-id={idx}>Save this recipe</Button>
+                                    ) : (
+                                        <Link to='/signup'>
+                                            <Button>Save this recipe</Button>
+                                        </Link>
+                                    )}
+
                                 </div>
                             </li>
                         )}

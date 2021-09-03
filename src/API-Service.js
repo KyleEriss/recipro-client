@@ -2,6 +2,7 @@ import config from './config';
 import TokenService from './token-service';
 
 const AuthApiService = {
+
     postLogin({ username, password }) {
         return fetch(`${config.API_ENDPOINT}/auth/login`, {
             method: 'POST',
@@ -54,10 +55,9 @@ const AuthApiService = {
             )
     },
 
-
-    deleteRecipe(recipeId) {
-        return fetch(`${config.API_ENDPOINT}/favorites/${recipeId}`, {
-            method: 'DELETE',
+    getRecipes() {
+        return fetch(`${config.API_ENDPOINT}/favorites`, {
+            method: 'GET',
             headers: {
                 'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
@@ -68,6 +68,27 @@ const AuthApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+            .catch(error => {
+                console.log({ error })
+            })
+    },
+            
+    deleteRecipe(recipeId) {
+        return fetch (`${config.API_ENDPOINT}/favorites/${recipeId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+            .then (res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+            .catch(error => {
+                console.log({ error })
+            })
     }
 }
 
