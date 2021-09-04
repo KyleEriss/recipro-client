@@ -35,7 +35,7 @@ export default class CreateAccountForm extends React.Component {
                 this.setState({loggedIn: true})
                 setTimeout(() => {
                     this.props.onRegistrationSuccess()
-                  }, 2000);
+                }, 2000);
             })
             .catch(res => {
                 this.setState({ error: res.error })
