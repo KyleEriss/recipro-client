@@ -10,10 +10,10 @@ export default class LoginForm extends React.Component {
         onLoginSuccess: () => { }
     }
 
-    state = { 
+    state = {
         error: null,
         loggedIn: false
-     }
+    }
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
@@ -28,10 +28,10 @@ export default class LoginForm extends React.Component {
                 username.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
-                this.setState({loggedIn: true})
+                this.setState({ loggedIn: true })
                 setTimeout(() => {
                     this.props.onLoginSuccess()
-                  }, 2000);
+                }, 2000);
             })
             .catch(res => {
                 this.setState({ error: res.error })
