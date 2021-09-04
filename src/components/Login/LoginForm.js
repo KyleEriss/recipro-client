@@ -31,7 +31,7 @@ export default class LoginForm extends React.Component {
                 this.setState({loggedIn: true})
                 setTimeout(() => {
                     this.props.onLoginSuccess()
-                  }, 2000);
+                }, 2000);
             })
             .catch(res => {
                 this.setState({ error: res.error })
