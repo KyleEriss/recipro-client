@@ -143,7 +143,7 @@ export default class Search extends React.Component {
                                 value={this.state.ingredientItem}
                                 required
                                 autoComplete="off"
-                                onChange={this.handleChange}
+                                onChange={(value) => this.handleChange(value)}
                                 id="ingredientOptions"
                             />
                             <ul className="autoCompleteSuggestions">
